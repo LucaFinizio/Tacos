@@ -7,8 +7,8 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 public class Ingredient {
-	  private String id="";
-	  private String name="";
+	  private String id;
+	  private String name;
 	  private Type type;
 	  
 	  public static enum Type {
@@ -21,7 +21,8 @@ public class Ingredient {
 		this.type = type;
 	}
 
-	public Object getType() {
+	public Type getType() {
+		// TODO Auto-generated method stub
 		return type;
 	}
 }
