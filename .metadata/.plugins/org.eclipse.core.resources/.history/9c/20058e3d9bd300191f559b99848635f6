@@ -1,0 +1,7 @@
+package tacos;
+
+import java.util.List;
+
+public class Taco {
+	List<Ingredient> ingredients;
+}

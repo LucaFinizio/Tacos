@@ -1,0 +1,23 @@
+package tacos;
+
+//Lombok library will generate getters and setters at runtime
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
+public class Ingredient {
+	private final String id="";
+	private final String name="";
+	
+	private final Type type = Type.WRAP;  //We initialize it to a random value to avoid error
+
+	public static enum Type {
+		WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
+	}
+	
+	//Constructor
+	public Ingredient(String string, String string2, Type type) {
+		
+	}
+}
