@@ -12,16 +12,16 @@
 
     <form method="POST" th:object="${design}">
 
-    <span class="validationError"
+    <!-- <span class="validationError"
           th:if="${#fields.hasErrors('ingredients')}"
-          th:errors="*{ingredients}">Ingredient Error</span>  
+          th:errors="*{ingredients}">Ingredient Error</span>   -->
 
    
     <div class="grid">
       <div class="ingredient-group" id="wraps">
       <h3>Designate your wrap:</h3>
       <div th:each="ingredient : ${wrap}">
-        <input name="ingredients" type="checkbox" th:value="${Ingredient.id}" />
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
         <span th:text="${ingredient.name}">INGREDIENT</span><br/>
       </div>
       </div>
@@ -29,7 +29,7 @@
 	  <div class="ingredient-group" id="proteins">
       <h3>Pick your protein:</h3>
       <div th:each="ingredient : ${protein}">
-        <input name="ingredients" type="checkbox" th:value="${Ingredient.id}" />
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
         <span th:text="${ingredient.name}">INGREDIENT</span><br/>
       </div>
       </div>
@@ -37,7 +37,7 @@
 	  <div class="ingredient-group" id="cheeses">
       <h3>Choose your cheese:</h3>
       <div th:each="ingredient : ${cheese}">
-        <input name="ingredients" type="checkbox" th:value="${Ingredient.id}" />
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
         <span th:text="${ingredient.name}">INGREDIENT</span><br/>
       </div>
       </div>
@@ -45,7 +45,7 @@
 	  <div class="ingredient-group" id="veggies">
       <h3>Determine your veggies:</h3>
       <div th:each="ingredient : ${veggies}">
-        <input name="ingredients" type="checkbox" th:value="${Ingredient.id}" />
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
         <span th:text="${ingredient.name}">INGREDIENT</span><br/>
       </div>
       </div>
@@ -53,7 +53,7 @@
 	  <div class="ingredient-group" id="sauces">
       <h3>Select your sauce:</h3>
       <div th:each="ingredient : ${sauce}">
-        <input name="ingredients" type="checkbox" th:value="${Ingredient.id}" />
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
         <span th:text="${ingredient.name}">INGREDIENT</span><br/>
       </div>
       </div>
