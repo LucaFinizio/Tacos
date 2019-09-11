@@ -16,3 +16,6 @@
 1568193110467	Move compilation unit
 1568193183440	Delete element
 1568205544997	Delete element
+1568215447416	Encapsulate field 'id'
+1568215457061	Encapsulate field 'name'
+1568215464181	Encapsulate field 'type'
