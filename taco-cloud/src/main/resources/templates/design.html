@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
   <head>
     <title>Taco Cloud</title>
     <link rel="stylesheet" th:href="@{/styles.css}" /> 
@@ -12,9 +13,7 @@
 
     <form method="POST" th:object="${design}">
 
-    <span class="validationError"
-          th:if="${#fields.hasErrors('ingredients')}"
-          th:errors="*{ingredients}">Ingredient Error</span>  
+
 
     <div class="grid">
       <div class="ingredient-group" id="wraps">
