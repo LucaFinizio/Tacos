@@ -29,7 +29,7 @@ public class DesignTacoController {
 
 	@GetMapping
 	public String showDesignForm(Model model) {
-		model.addAttribute("taco", new Taco());
+		model.addAttribute("design", new Taco());
 		return "design";
 	}
 
@@ -54,24 +54,17 @@ public class DesignTacoController {
 			filterByType(ingredients, type));
 		}
 	}
-	
-	/*
-	  @PostMapping
-	  public String processDesign(Design design) {
-	    // Save the taco design...
-	    log.info("Processing design: " + design);
-	    return "redirect:/orders/current";
-	  }
-	 */
 
-	@PostMapping
-	public String processDesign(@Valid @ModelAttribute("design") Taco design, Errors errors, Model model) {
-		if (errors.hasErrors()) {
+	@PostMapping  //This code handles the POST requests for /design
+	public String processDesign(@Valid Taco design, Errors errors) {
+		/*if(errors.hasErrors()) 
+		{
 			return "design";
-		}
+		}*/
 		// Save the taco design...
 		log.info("Processing design: " + design);
-		return "redirect:/orders/current";
+		//redirect indicates that this is a redirect view
+		return "redirect:/orders/current";  
 	}
 
 	private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
