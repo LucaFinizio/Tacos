@@ -1,12 +1,20 @@
 package tacos;
 
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+
+
 import org.hibernate.validator.constraints.CreditCardNumber;
 
 public class Order {
+	private Long id;
+	private Date placedAt;
 	@NotBlank(message="Name is required")
 	private String name;
 	@NotBlank(message="Street is required")
@@ -30,6 +38,26 @@ public class Order {
 	public Order(String name, String street, String city, String state, String zip, String ccNumber,
 			String ccExpiration, String ccCVV) {
 		super();
+		this.name = name;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.ccNumber = ccNumber;
+		this.ccExpiration = ccExpiration;
+		this.ccCVV = ccCVV;
+	}
+	
+	public Order(Long id, Date placedAt, @NotBlank(message = "Name is required") String name,
+			@NotBlank(message = "Street is required") String street,
+			@NotBlank(message = "City is required") String city, @NotBlank(message = "State is required") String state,
+			@NotBlank(message = "Zip code is required") String zip,
+			@CreditCardNumber(message = "Not a valid credit card number") String ccNumber,
+			@Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$", message = "Must be formatted MM/YY") String ccExpiration,
+			@Digits(integer = 3, fraction = 0, message = "Invalid CVV") String ccCVV) {
+		super();
+		this.id = id;
+		this.placedAt = placedAt;
 		this.name = name;
 		this.street = street;
 		this.city = city;
@@ -87,4 +115,23 @@ public class Order {
 	public void setCcCVV(String ccCVV) {
 		this.ccCVV = ccCVV;
 	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Date getPlacedAt() {
+		return placedAt;
+	}
+	public void setPlacedAt(java.util.Date date) {
+		this.placedAt = (Date) date;
+	}
+	
+	private List<Taco> tacos = new ArrayList<>();
+	
+	public void addDesign(Taco design) {
+	    this.tacos.add(design);
+	  }
+
 }

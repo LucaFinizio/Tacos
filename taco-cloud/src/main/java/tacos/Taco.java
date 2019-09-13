@@ -1,11 +1,14 @@
 package tacos;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Taco {
+	  public Long id;
+	  private Date createdAt;
 	  @NotNull
 	  @Size(min=5, message="Name must be at least 5 characters long")
 	  private String name;
@@ -34,6 +37,27 @@ public class Taco {
 	//Costruttore vuoto
 	public Taco() {
 		super();
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(java.util.Date date) {
+		this.createdAt = date;
+	}
+	public Taco(Long id, Date createdAt,
+			@NotNull @Size(min = 5, message = "Name must be at least 5 characters long") String name,
+			@Size(min = 1, message = "You must choose at least 1 ingredient") List<String> ingredients) {
+		super();
+		this.id = id;
+		this.createdAt = createdAt;
+		this.name = name;
+		this.ingredients = ingredients;
 	}
 	
 }

@@ -3,8 +3,6 @@ package tacos;
 //Lombok library will generate getters and setters at runtime
 //import lombok.Data;
 
-
-
 public class Ingredient {
 	  private String id;
 	  private String name;

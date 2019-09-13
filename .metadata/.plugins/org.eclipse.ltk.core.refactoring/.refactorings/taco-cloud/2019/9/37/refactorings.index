@@ -20,3 +20,8 @@
 1568215457061	Encapsulate field 'name'
 1568215464181	Encapsulate field 'type'
 1568277409949	Delete element
+1568291871366	Encapsulate field 'name'
+1568291877183	Encapsulate field 'ingredients'
+1568301952413	Delete element
+1568360188613	Encapsulate field 'id'
+1568360838751	Encapsulate field 'placedAt'
