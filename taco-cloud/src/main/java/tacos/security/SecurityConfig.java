@@ -13,9 +13,11 @@ import org.springframework.security.config.annotation
              .authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web
              .builders.HttpSecurity;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 
 @SuppressWarnings("deprecation")
@@ -56,49 +58,50 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   
   /*
   @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth
       .userDetailsService(userDetailsService);
     
   }
-  
-   */
+  */
+ 
 
   @Bean
   public PasswordEncoder encoder() {
     return new StandardPasswordEncoder("53cr3t");
   }
   
-  
   @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
     auth
       .userDetailsService(userDetailsService)
       .passwordEncoder(encoder());
-    
   }
+
+  
+/*  @Bean
+  public UserDetailsService userDetailsService() {
+
+      User.UserBuilder users = User.withDefaultPasswordEncoder();
+      InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+      manager.createUser(users.username("buzz").password("infinity").roles("USER").build());
+      manager.createUser(users.username("woody").password("bullseye").roles("USER", "ADMIN").build());
+      return manager;
+  }
+  */
   
 //
 // IN MEMORY AUTHENTICATION EXAMPLE
 //
 /*
   @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     
     auth
-      .inMemoryAuthentication()
-        .withUser("buzz")
-          .password("infinity")
-          .authorities("ROLE_USER")
-        .and()
-        .withUser("woody")
-          .password("bullseye")
-          .authorities("ROLE_USER");
-    
+      .inMemoryAuthentication().withUser("buzz").password("infinity").authorities("ROLE_USER")
+        	.and()
+        					    .withUser("woody").password("bullseye").authorities("ROLE_USER");
   }
 */
 

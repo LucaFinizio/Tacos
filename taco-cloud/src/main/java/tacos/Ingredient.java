@@ -52,5 +52,9 @@ public class Ingredient {
 		this.name = name;
 		this.type = type;
 	}
+
+	public Ingredient() {
+		super();
+	}
 	
 }
