@@ -1,9 +1,19 @@
 package tacos;
 
-//Lombok library will generate getters and setters at runtime
-//import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.AccessLevel;
+
+@Data
+@RequiredArgsConstructor
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@Entity
 public class Ingredient {
+	  @Id
 	  private String id;
 	  private String name;
 	  private Type type;

@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\AESYS\\git\\taco-cloud\\.git;C\:\\AESYS\\Workspace\\spring-in-action-5-samples\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\AESYS\\git\\taco-cloud\\.git;C\:\\AESYS\\Workspace\\spring-in-action-5-samples\\.git;
+GitRepositoriesView.GitDirectories=C\:\\AESYS\\Workspace\\Tacos\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
