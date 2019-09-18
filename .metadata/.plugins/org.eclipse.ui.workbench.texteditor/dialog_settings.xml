@@ -3,11 +3,16 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="true"/>
+		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="processRegistration"/>
+			<item value="touser"/>
+			<item value="userdetailsservice"/>
+			<item value="userdetails"/>
+			<item value="lombok"/>
 			<item value="ingredientrepo"/>
 			<item value="devtools"/>
 			<item value="get"/>
@@ -17,12 +22,7 @@
 			<item value="th:value"/>
 			<item value="th:each"/>
 			<item value="maven"/>
-			<item value="lombok"/>
 			<item value="field"/>
-			<item value="each"/>
-			<item value="design"/>
-			<item value="@"/>
-			<item value="thymeleaf"/>
 		</list>
 		<list key="replacehistory">
 			<item value="cked"/>

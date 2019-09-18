@@ -9,8 +9,7 @@ import tacos.User;
 import tacos.data.UserRepository;
 
 @Service
-public class UserRepositoryUserDetailsService 
-        implements UserDetailsService {
+public class UserRepositoryUserDetailsService implements UserDetailsService {
 
   private UserRepository userRepo;
 
@@ -20,14 +19,12 @@ public class UserRepositoryUserDetailsService
   }
   
   @Override
-  public UserDetails loadUserByUsername(String username)
-      throws UsernameNotFoundException {
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     User user = userRepo.findByUsername(username);
     if (user != null) {
       return user;
     }
-    throw new UsernameNotFoundException(
-                    "User '" + username + "' not found");
+    throw new UsernameNotFoundException("User '" + username + "' not found");
   }
 
 }

@@ -11,13 +11,10 @@ import org.springframework.security.config.annotation.web
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation
              .authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web
-             .builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 
 @SuppressWarnings("deprecation")
@@ -70,6 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public PasswordEncoder encoder() {
     return new StandardPasswordEncoder("53cr3t");
   }
+  
   
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
