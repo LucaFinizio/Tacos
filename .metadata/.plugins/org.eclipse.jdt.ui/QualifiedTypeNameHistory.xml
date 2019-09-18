@@ -46,7 +46,6 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="tacos.data.UserRepository"/>
     <fullyQualifiedTypeName name="java.security.Principal"/>
-    <fullyQualifiedTypeName name="tacos.User"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.User"/>
     <fullyQualifiedTypeName name="org.springframework.security.provisioning.InMemoryUserDetailsManager"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="org.springframework.security.crypto.factory.PasswordEncoderFactories"/>
     <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
     <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <fullyQualifiedTypeName name="tacos.User"/>
 </qualifiedTypeNameHistroy>

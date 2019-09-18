@@ -133,6 +133,10 @@ public class User implements UserDetails {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public User() {
+		super();
 	}  
 	
 	

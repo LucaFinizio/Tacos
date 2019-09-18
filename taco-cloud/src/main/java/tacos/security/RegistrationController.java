@@ -31,7 +31,7 @@ public class RegistrationController {
 	  
 	//BUG: The user is not correctly registered in the database (all fields are null). 
 	//The following two lines are a workaround
-	User utenteDiProva = new User("buzz","infinity","Buzz_Lightyear","via Delli 2","Pescara","Italy","65127","08567876");
+	User utenteDiProva = new User("buzz",passwordEncoder.encode("infinity"),"Buzz_Lightyear","via Delli 2","Pescara","Italy","65127","08567876");
     userRepo.save(utenteDiProva);
     
 	//userRepo.save(form.toUser(passwordEncoder));
