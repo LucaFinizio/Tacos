@@ -15,8 +15,8 @@ import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
-@RequiredArgsConstructor
+//@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+//@RequiredArgsConstructor
 public class User implements UserDetails {
 
   private static final long serialVersionUID = 1L;
@@ -59,85 +59,20 @@ public class User implements UserDetails {
     return true;
   }
 
-  @Override
-  public String getPassword() {
-	return password;
-  }
-	
-  @Override
-  public String getUsername() {
-	return username;
-  }
-
-  //Constructor
 	public User(String username, String password, String fullname, String street, String city, String state, String zip,
 			String phoneNumber) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.fullname = fullname;
-		this.setStreet(street);
-		this.setCity(city);
-		this.setState(state);
-		this.setZip(zip);
-		this.setPhoneNumber(phoneNumber);
-	}
-
-	public String getFullname() {
-		return fullname;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
 		this.street = street;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
 		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
 		this.state = state;
-	}
-
-	public String getZip() {
-		return zip;
-	}
-
-	public void setZip(String zip) {
 		this.zip = zip;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public User() {
-		super();
-	}  
+
 	
 	
 }

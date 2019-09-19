@@ -9,8 +9,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.AccessLevel;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+//@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+//@RequiredArgsConstructor
 @Entity
 public class Ingredient {
 	  @Id

@@ -28,8 +28,7 @@ public class OrderController {
   }
   
   @GetMapping("/current")
-  public String orderForm(@AuthenticationPrincipal User user, 
-      @ModelAttribute Order order) {
+  public String orderForm(@AuthenticationPrincipal User user, @ModelAttribute Order order) {
     if (order.getDeliveryName() == null) {
       order.setDeliveryName(user.getFullname());
     }
@@ -49,7 +48,6 @@ public class OrderController {
     return "orderForm";
   }
 
-  // tag::processOrderWithAuthenticationPrincipal[]
   @PostMapping
   public String processOrder(@Valid Order order, Errors errors, 
       SessionStatus sessionStatus, 
