@@ -2,7 +2,6 @@ package tacos.web;
 
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,19 +30,18 @@ import tacos.data.UserRepository;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("order")
-@Slf4j
-public class DesignTacoController {
+public class DesignTacoController_Old {
   
-  private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DesignTacoController.class);
+  private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DesignTacoController_Old.class);
 	
-  private final IngredientRepository ingredientRepo;
+  private IngredientRepository ingredientRepo;
   
   private TacoRepository tacoRepo;
 
   private UserRepository userRepo;
 
   @Autowired
-  public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository tacoRepo, UserRepository userRepo) {
+  public DesignTacoController_Old(IngredientRepository ingredientRepo, TacoRepository tacoRepo, UserRepository userRepo) {
     this.ingredientRepo = ingredientRepo;
     this.tacoRepo = tacoRepo;
     this.userRepo = userRepo;

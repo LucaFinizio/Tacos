@@ -3,16 +3,15 @@ package tacos.security;
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web
-                        .configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web
-                        .configuration.WebSecurityConfigurerAdapter;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation
-             .authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
@@ -30,27 +29,37 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http
       .authorizeRequests()
-        .antMatchers("/design", "/orders")
-          .access("hasRole('ROLE_USER')")
-        .antMatchers("/", "/**").access("permitAll")
+        //.antMatchers(HttpMethod.OPTIONS).permitAll() // needed for Angular/CORS
+        //.antMatchers(HttpMethod.POST, "/api/ingredients").permitAll()
+        .antMatchers("/design", "/orders/**")
+            //.permitAll()
+            .access("hasRole('ROLE_USER')")
+        //.antMatchers(HttpMethod.PATCH, "/ingredients").permitAll()
+        .antMatchers("/**").access("permitAll")
         
       .and()
         .formLogin()
           .loginPage("/login")
-      .and()
-        .logout()
-          .logoutSuccessUrl("/")
           
-      // Make H2-Console non-secured; for debug purposes
+     /* .and()
+        .httpBasic()
+          .realmName("Taco Cloud")*/
+          
+          
       .and()
         .csrf()
-          .ignoringAntMatchers("/h2-console/**")
+          .ignoringAntMatchers("/h2-console/**" /* ,"/ingredients/**", "/design", "/orders/**", "/api/**"*/)
 
       // Allow pages to be loaded in frames from the same origin; needed for H2-Console
       .and()  
         .headers()
           .frameOptions()
-            .sameOrigin();
+            .sameOrigin()
+            
+            .and()
+            .logout()
+              .logoutSuccessUrl("/")
+      ;
   }
   
   /*
@@ -66,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Bean
   public PasswordEncoder encoder() {
     return new StandardPasswordEncoder();
+    //return NoOpPasswordEncoder.getInstance();
   }
   
   
