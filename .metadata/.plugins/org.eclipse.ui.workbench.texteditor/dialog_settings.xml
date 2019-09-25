@@ -8,6 +8,8 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="hate"/>
+			<item value="orderlist"/>
 			<item value="enc"/>
 			<item value="User"/>
 			<item value="processRegistration"/>
@@ -21,16 +23,14 @@
 			<item value="gettacos"/>
 			<item value="org.thymeleaf"/>
 			<item value="spring"/>
-			<item value="th:value"/>
-			<item value="th:each"/>
 		</list>
 		<list key="replacehistory">
 			<item value="cked"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="61"/>
-		<item key="DIALOG_Y_ORIGIN" value="274"/>
+		<item key="DIALOG_X_ORIGIN" value="47"/>
+		<item key="DIALOG_Y_ORIGIN" value="175"/>
 		<item key="DIALOG_WIDTH" value="437"/>
 		<item key="DIALOG_HEIGHT" value="525"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
